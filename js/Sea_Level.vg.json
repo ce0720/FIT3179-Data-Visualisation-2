@@ -1,0 +1,12 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {"url": "https://raw.githubusercontent.com/ce0720/Data-Visualisation-2/main/data/Sea%20Level%20Dataset.csv"},
+    "width": 750,
+    "height": 500,
+    "title": "Global Level Absolute Sea Level Change Over Time",
+    "mark": "line",
+    "encoding": {
+      "x": {"field": "Year", "type": "temporal", "title": "Year"},
+      "y": {"field": "Global Level Absolute Sea Level Change", "type": "quantitative", "title": "Sea Level Change"}
+    }
+  }

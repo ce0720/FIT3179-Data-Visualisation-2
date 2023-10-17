@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Types of Greenhouse Gas Emission",
+    "title": "Greenhouse Gas Emission Distribution",
+    "data": {
+      "values": [
+        {"Greenhouse Gases": "HFC, PFC, SF6", "Emission Rate": 2},
+        {"Greenhouse Gases": "Nitrous Oxide", "Emission Rate": 10},
+        {"Greenhouse Gases": "Methane", "Emission Rate": 16},
+        {"Greenhouse Gases": "Carbon Dioxide", "Emission Rate": 76}
+      ]
+    },
+    "width": 300,  
+    "height": 300,
+    "mark": {"type": "arc", "innerRadius": 90},
+    "encoding": {
+      "theta": {"field": "Emission Rate", "type": "quantitative"},
+      "color": {"field": "Greenhouse Gases", "type": "nominal"},
+      "tooltip": [
+        {"field": "Greenhouse Gases", "title": "Greenhouse Gases"},
+        {"field": "Emission Rate", "title": "Emission Rate"}
+      ]
+    }
+  }
+  

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.5.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+  
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="styles.css" media="all">
+
+  <title> Climate Change </title>
+
+  
+  </style>
+  
+  
+</head>
+<body>
+
+  
+  <h1 id = "c-align">Climate Change</h1>
+
+  <div class="container" id = "c-align">
+    <p>Explore the dynamic world of <span class = "red">climate change </span> through compelling visualizations. 
+      From <span class = "blue">temperature shifts </span> to <span class = "green">environmental impacts</span>, our data-driven journey uncovers the ever-evolving story of our planet's climate. <br> <br></p>
+  </div>
+
+
+  <div id="vega-lite-container0" >
+    <div id="choropleth_map"></div>
+  </div>
+
+
+  <div id="vega-lite-container1" >
+    <div id="Gas_Emission"></div>
+  </div>
+
+  <div class="description-choropleth">
+    <h2 class = "red" id = "c-align">CO2 Emission</h2>
+    <p id = "c-align">Carbon Dioxide (CO2) is one of the <span class = "red">largest greenhouse gas emissions</span> among all the other gases as it consists of 76% of greenhouse gas emission distribution.
+      From the choropleth map above, we can observe that majorities of the countries nowadays are having an <span class = "red">unhealthy CO2 emission rate</span>, which is more than <span class = "red">2.3 metric tons </span>per capita.
+      Developing countries such as the United States, Canada, and China are having a <span class = "red">relatively high </span>emission, which is more than the <span class = "red">8.8 metric tons</span>.<br><br>
+    </p>
+  </div>
+
+  <div id="vega-lite-container2" class="chart-container" >
+    <div id="Sea_Level" class="chart"></div>
+    <div class="description-sea">
+      <span class = "greenhead">Change of Sea Level</span> <br><br>
+      <p></p>As the global <span class = "green">temperature increases</span>, the sea levels in the world has been <span class = "green">increased directly proportional</span> over time. We can see that the Sea Level Change have
+    reaches <span class = "green">71 </span>which indicates that the ice in both north and south pole are <span class = "green">melting</span> in a fast speed. </p> <br>
+     The rapid changes of sea levels also indicates that <span class = "green">global warming issues</span> are currently <span class = "green">not being resolved</span> yet. Further actions should be taken by leading countries
+     to protect our world together.
+    </div>
+  </div>
+
+  <h2 class ="blue"> Change of Temperature</h2>
+  <div id="vega-lite-container" class="chart-container">
+    <div id="Heat_map" class="chart2"></div>
+    <div id="Surface_Temp" class="chart2"></div>
+  </div>
+
+  <p> Based on the stacked bar chart, we can see that the <span class = "blue">Annual Surface Temperature change</span> for these recent <span class = "blue">5 years </span>are very high which is <span class = "blue">more than 6°C </span>changes in just different 5 countries.
+    Among all of the countries in the bar chart, <span class = "blue">Russia></span> has the <span class = "blue">highest temperature</span> change among the other 5 countries. Based on the heatmap which
+    provides information about temeprature change in US, we can see that <span class = "blue">temperature change</span> is getting higher in recent years. During <span class = "blue">January to March</span>,
+    we can observe that the temperature change is <span class = "blue">higher</span> than other months because it might be due to <span class = "blue">winter season</span> where temperature falls and drops quickly.
+     </p>
+
+
+  
+
+
+  
+  
+
+
+
+
+  
+
+
+  
+
+  <script type="text/javascript">
+    var spec1 = "js/choropleth_map.vg.json";
+    var spec2 = "js/Heatmap.vg.json";
+    var spec3 = "js/Gas_Emission.vg.json";
+    var spec4 = "js/Annual_Suraface_Temp.vg.json";
+    var spec5 = "js/Sea_Level.vg.json"
+
+    vegaEmbed('#choropleth_map', spec1).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+    vegaEmbed('#Heat_map', spec2).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+    vegaEmbed('#Gas_Emission', spec3).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+    vegaEmbed('#Surface_Temp', spec4).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+    vegaEmbed('#Sea_Level', spec5).then(function(result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
+</body>
+</html>

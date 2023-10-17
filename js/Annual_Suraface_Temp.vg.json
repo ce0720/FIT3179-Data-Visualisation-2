@@ -1,0 +1,43 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/ce0720/Data-Visualisation-2/main/data/Cleaned_Annual_Surface_Temperature_Change.csv"
+    },
+    "width": 500,
+    "height": 500,
+    "title": "Annual Surface Temperature Change by Country",
+    "mark": {
+      "type": "bar",
+      "size": 65
+    },
+    "encoding": {
+      "x": {
+        "field": "Year",
+        "type": "ordinal",
+        "title": "Year" 
+      },
+      "y": {
+        "field": "Annual Surface Temperature Change (°C)",
+        "type": "quantitative",
+        "title": "Temperature Change (°C)" 
+      },
+      "color": {
+        "field": "Country",
+        "type": "nominal",
+        "title": "Country" 
+      },
+      "tooltip": [
+        { "field": "Year", "title": "Year" },
+        { "field": "Annual Surface Temperature Change (°C)", "title": "Temperature Change (°C)" },
+        { "field": "Country", "title": "Country" }
+      ]
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  

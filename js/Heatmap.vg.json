@@ -1,0 +1,30 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {"url": "https://raw.githubusercontent.com/ce0720/Data-Visualisation-2/main/data/Heatmap2.0.csv"},
+  "width": 500,
+  "height": 500,
+  "title": "Monthly Temperature Changes Over the Years in US",
+  "mark": "rect",
+  "encoding": {
+    "y": {
+      "field": "Months",
+      "type": "ordinal",
+      "title": "Months",
+      "sort": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    },
+    "x": {"field": "Year", "type": "ordinal", "title": "Year"},
+    "color": {"aggregate": "mean", "field": "Value", "title": "Temperature Change (°C)","scale": {
+        "type": "threshold",
+        "domain": [0,1,2],
+        "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#a63603"]
+        } },
+    "tooltip": [
+      {"field": "Months", "title": "Month"},
+      {"field": "Year", "title": "Year"},
+      {"field": "Value", "title": "Temperature Change (°C)"}
+    ]
+  },
+  "config": {
+    "axis": {"grid": true, "tickBand": "extent"}
+  }
+}

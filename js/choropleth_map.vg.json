@@ -1,0 +1,39 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "CO2 emissions (metric tons per capita)",
+  "width": 800,
+  "height": 400,
+  "projection": {"type": "equalEarth"},
+  "data": {
+    "url": "https://raw.githubusercontent.com/ce0720/Data-Visualisation-2/main/js/ne_110m_admin_0_countries2.json",
+    "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.NAME_LONG",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/ce0720/Data-Visualisation-2/main/data/Cleaned_dataset.csv"
+        },
+        "key": "Country Name",
+        "fields": ["Emission Rate"]
+      }
+    }
+    
+  ],
+  "mark": {"type": "geoshape"},
+  "encoding": {
+    "color": {
+      "field": "Emission Rate",
+      "type": "quantitative",
+      "scale": {
+        "type": "threshold",
+        "domain": [2.3,5.12,8.8],
+        "range": ["#fdbe85", "#fd8d3c", "#e6550d", "#a63603"]
+        }},
+        "tooltip": [
+        {"field": "properties.NAME_LONG", "type": "nominal", "title": "Country"},
+        {"field": "Emission Rate", "type": "quantitative"}
+      ]
+  }
+}
